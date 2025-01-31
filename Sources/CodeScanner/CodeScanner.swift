@@ -81,6 +81,7 @@ public struct CodeScannerView: UIViewControllerRepresentable {
     public let scanMode: ScanMode
     public let manualSelect: Bool
     public let scanInterval: Double
+    public let zoomFactor: CGFloat
     public let showViewfinder: Bool
     public let useViewfinderAsRectOfInterest: Bool
     public let requiresPhotoOutput: Bool
@@ -98,6 +99,7 @@ public struct CodeScannerView: UIViewControllerRepresentable {
         scanMode: ScanMode = .once,
         manualSelect: Bool = false,
         scanInterval: Double = 2.0,
+        zoomFactor: CGFloat = 1,
         showViewfinder: Bool = false,
         useViewfinderAsRectOfInterest: Bool = false,
         requiresPhotoOutput: Bool = true,
@@ -116,6 +118,7 @@ public struct CodeScannerView: UIViewControllerRepresentable {
         self.useViewfinderAsRectOfInterest = useViewfinderAsRectOfInterest
         self.requiresPhotoOutput = requiresPhotoOutput
         self.scanInterval = scanInterval
+        self.zoomFactor = zoomFactor
         self.simulatedData = simulatedData
         self.shouldVibrateOnSuccess = shouldVibrateOnSuccess
         self.isTorchOn = isTorchOn
@@ -137,6 +140,7 @@ public struct CodeScannerView: UIViewControllerRepresentable {
         uiViewController.parentView = self
         uiViewController.updateViewController(
             isTorchOn: isTorchOn,
+            zoomFactor: zoomFactor,
             isGalleryPresented: isGalleryPresented.wrappedValue,
             isManualCapture: scanMode.isManual,
             isManualSelect: manualSelect
