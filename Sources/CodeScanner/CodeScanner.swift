@@ -81,7 +81,7 @@ public struct CodeScannerView: UIViewControllerRepresentable {
     public let scanMode: ScanMode
     public let manualSelect: Bool
     public let scanInterval: Double
-    public let zoomFactor: CGFloat
+    public let zoomFactor: CGFloat?
     public let showViewfinder: Bool
     public let useViewfinderAsRectOfInterest: Bool
     public let requiresPhotoOutput: Bool
@@ -99,7 +99,7 @@ public struct CodeScannerView: UIViewControllerRepresentable {
         scanMode: ScanMode = .once,
         manualSelect: Bool = false,
         scanInterval: Double = 2.0,
-        zoomFactor: CGFloat = 1,
+        zoomFactor: CGFloat? = nil,
         showViewfinder: Bool = false,
         useViewfinderAsRectOfInterest: Bool = false,
         requiresPhotoOutput: Bool = true,
